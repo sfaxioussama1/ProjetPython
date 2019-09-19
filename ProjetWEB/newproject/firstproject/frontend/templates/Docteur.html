@@ -1,0 +1,46 @@
+{% extends "layoutfixe.html" %}
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread">Qualified Doctors</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Doctor <i class="ion-ios-arrow-forward"></i></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            {% for docteur in docteurs %}
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                      <img src="{{docteur.image.url}}" alt="" width="240"/>
+                    </div>
+                    <div class="text pt-3 text-center">
+                        <h3>Dr. {{docteur.nom}}</h3>
+                        <span class="position mb-2">{{docteur.specialite}}</span>
+                        <div class="faded">
+                            <p>{{docteur.description}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+
+
+        </div>
+
+    </div>
+</section>
+
+{%endblock%}

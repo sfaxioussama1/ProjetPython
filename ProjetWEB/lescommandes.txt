@@ -1,0 +1,14 @@
+run server :
+python manage.py runserver
+
+héthya ta3malha ken min lawel ou ken saretlek mouchkla fi db
+python manage.py migrate
+
+
+
+super user : 
+python manage.py createsuperuser
+
+pour creer table : 
+1) python manage.py makemigrations
+2) python manage.py sqlmigrate backend 0004

@@ -1,0 +1,326 @@
+{% extends "layoutfixe.html" %}
+{% block content %}
+{% load static %}
+<section class="home-slider owl-carousel">
+    <div class="slider-item" style="background: url('/static/bg_1.jpg')" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+                <div class="col-md-6 text ftco-animate">
+                    <h1 class="mb-4">Bienvenue à tous  <span>Restez heureux</span></h1>
+                    <h3 class="subheading">Chaque jour, nous apportons espoir et sourire au patient que nous servons</h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item" style="background: url('/static/bg_2.jpg')" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+                <div class="col-md-6 text ftco-animate">
+                    <h1 class="mb-4">Nous nous soucions <span>À propos de votre santé</span></h1>
+                    <h3 class="subheading">
+                        Votre santé est notre priorité absolue avec des soins médicaux complets et abordables.</h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-services ftco-no-pb">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-doctor"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Médecins</h3>
+
+                        <p>Nous avons les meilleurs médecins compétents dans leur travail.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-ambulance"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Soin d'urgence</h3>
+                        <p>Nous avons la meilleure voiture équipée de la dernière technologie.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-stethoscope"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Meilleur Service</h3>
+                        <p>Nous Donnons Les meilleurs Services Pour Tous Les Client.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-24-hours"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Service 24 heures</h3>
+                        <p>Nous sommes en services 24h sur 24h et 7/7 jours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% for apropo in apropos %}
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-5 p-md-5 img img-2 mt-5 mt-md-0" style="background-image:  url({{apropo.image.url}});">
+            </div>
+            <div class="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
+                <div class="heading-section mb-5">
+                    <div class="pl-md-5 ml-md-5">
+                        <span class="subheading">A Propos Clinique</span>
+                        <h2 class="mb-4" style="font-size: 28px;">{{apropo.title}}</h2>
+                    </div>
+                </div>
+                <div class="pl-md-5 ml-md-5 mb-5">
+                    <p> {{apropo.description}}.</p>
+                    <div class="row mt-5 pt-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Nous offrons des consultations gratuites sur les soins de santé</h2>
+                <p class="mb-0">Votre santé est notre priorité absolue avec des soins médicaux complets et abordables..</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">DÉPARTEMENT</span>
+                <h2 class="mb-4">Département clinique</h2>
+
+            </div>
+        </div>
+        <div class="ftco-departments">
+            <div class="row">
+                {% for departement in departements %}
+                <div class="col-md-12 nav-link-wrap">
+
+                    <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">{{departement.nom}}</a>
+
+
+                    </div>
+                </div>
+                <div class="col-md-12 tab-wrap">
+
+                    <div class="tab-content bg-light p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
+
+                        <div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+                            <div class="row departments">
+                                <div class="col-lg-4 order-lg-last d-flex align-items-stretch">
+                                    <div class="img d-flex align-self-stretch" style="background-image: url({{departement.image.url}});"></div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <h2>{{departement.nom}}</h2>
+                                    <p>{{departement.description}} </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">Docteurs</span>
+                <h2 class="mb-4">Les meilleurs docteurs ici</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for docteur in docteurs %}
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <img src="{{docteur.image.url}}" alt="" width="240"/>
+                    </div>
+                    <div class="text pt-3 text-center">
+                        <h3>Dr. {{docteur.nom}}</h3>
+                        <span class="position mb-2">{{docteur.specialite}}</span>
+                        <div class="faded">
+                            <p>{{docteur.description}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+
+        </div>
+</section>
+
+
+
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 py-5 pr-md-5">
+                <div class="heading-section heading-section-white ftco-animate mb-5">
+                    <span class="subheading">Consultation</span>
+                    <h2 class="mb-4">Consultation Gratuite</h2>
+                    <p>Consultation gratuite dans un meilleur service avec des meilleurs docteurs </p>
+                </div>
+                <form method="POST" class="appointment-form ftco-animate">
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            {% csrf_token %}
+                            {{form.name}}
+                        </div>
+                        <div class="form-group ml-md-4">
+                            {{form.prenom}}
+                        </div>
+                    </div>
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            <div class="input-wrap">
+                                <div class="icon"><span class="ion-md-calendar"></span></div>
+                                {{form.date}}
+                            </div>
+                        </div>
+                        <div class="form-group ml-md-4">
+                            <div class="input-wrap">
+                                <div class="icon"><span class="ion-ios-clock"></span></div>
+                                {{form.time}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            {{form.message}}
+                        </div>
+
+
+                    </div>
+
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            <input type="submit" value="Envoyer" class="btn btn-secondary py-3 px-4">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 p-5 bg-counter aside-stretch">
+                <h3 class="vr">Les statistiques</h3>
+                <div class="row pt-4 mt-1">
+                    <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 p-5 bg-light">
+                            <div class="text">
+                                <strong class="number" data-number="{{apropo.experience}}">0</strong>
+                                <span>Années d'expérience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 p-5 bg-light">
+                            <div class="text">
+                                <strong class="number" data-number="{{apropo.nbrclient}}">0</strong>
+                                <span>Nombres Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 p-5 bg-light">
+                            <div class="text">
+                                <strong class="number" data-number="{{apropo.nbrdoctor}}">0</strong>
+                                <span>Nombre de médecins</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 p-5 bg-light">
+                            <div class="text">
+                                <strong class="number" data-number="{{apropo.nbrstaff}}">0</strong>
+                                <span>Nombre de personnels</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">Prix</span>
+                <h2 class="mb-4">NOTRE TARIFICATION</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for prix in prixs %}
+            <div class="col-md-3 ftco-animate">
+                <div class="pricing-entry pb-5 text-center">
+                    <div>
+                        <h3 class="mb-4">{{prix.type}}</h3>
+                        <p><span class="price">{{prix.prix}} TND</span> <span class="per">/ Jours</span></p>
+                    </div>
+                    <ul>
+                        <li>{{prix.service1}}</li>
+                        <li>{{prix.service2}}</li>
+                        <li>{{prix.service3}}</li>
+                        <li>{{prix.service4}}</li>
+
+                    </ul>
+
+                </div>
+            </div>
+            {%endfor%}
+
+
+        </div>
+    </div>
+</section>
+
+
+{%endfor%}
+{%endblock%}
